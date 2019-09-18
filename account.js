@@ -22,14 +22,14 @@ class BankAccount {
         console.log(`Balance: ${this.balance} USD`)
     };
 
-    // deposit(amount) {
-    //     if(this.status === false) {
-    //         console.log('Invalid transaction');
-    //     } else {
-    //         this.balance += amount;
-    //         this.getBalance();
-    //     }
-    // };
+    deposit(amount) {
+        if(this.status === 'open') {
+            this.balance += amount;
+            this.getBalance();
+        } else {
+            console.log('Invalid transaction');
+        }
+    };
 
     // withdraw(amount) {
     //     if(this.status === false || amount > this.balance){
@@ -55,7 +55,7 @@ let newOwner = new BankAccount('asdasfs',3450)
 newOwner.open();
 
 newOwner.getBalance();
-// newOwner.deposit(2000);
+newOwner.deposit(2000);
 // newOwner.withdraw(200);
 
 
