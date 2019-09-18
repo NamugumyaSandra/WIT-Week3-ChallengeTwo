@@ -4,5 +4,12 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "name": "bankaccount",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NamugumyaSandra/WIT-Week3-ChallengeTwo.git",
+  "author": "Namugumya Sandra <salyn134@gmail.com>",
+  "license": "MIT",
+  "private": false
 }
