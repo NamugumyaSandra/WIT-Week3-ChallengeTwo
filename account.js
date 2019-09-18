@@ -41,22 +41,20 @@ class BankAccount {
     };
     
 
-    // close(){
-    //     if(this.status === false){
-    //         console.log('You cannot perform any transactions.Account is closed.');
-    //     }else{
-    //         this.open();
-    //     }
-    // }
-    
+    close(){
+        this.status = 'closed';
+        console.log('You cannot perform any transactions.Account is closed.');    
+    };
 }
 
-let newOwner = new BankAccount('asdasfs',3450)
-newOwner.open();
+// let newOwner = new BankAccount('asdasfs',3450)
+// newOwner.open();
 
-newOwner.getBalance();
-newOwner.deposit(2000);
-newOwner.withdraw(200);
+// newOwner.getBalance();
+// newOwner.deposit(2000);
+// newOwner.withdraw(200);
+// newOwner.close();
+// newOwner.deposit(2000);
 
 
 module.exports = BankAccount;
