@@ -17,11 +17,10 @@ class BankAccount {
         }      
     }
 
-
-    // //transactions
-    // getBalance() {
-    //     console.log(`Balance: ${this.balance} USD`)
-    // };
+//transactions
+    getBalance() {
+        console.log(`Balance: ${this.balance} USD`)
+    };
 
     // deposit(amount) {
     //     if(this.status === false) {
@@ -55,7 +54,7 @@ class BankAccount {
 let newOwner = new BankAccount('asdasfs',3450)
 newOwner.open();
 
-// newOwner.getBalance();
+newOwner.getBalance();
 // newOwner.deposit(2000);
 // newOwner.withdraw(200);
 
