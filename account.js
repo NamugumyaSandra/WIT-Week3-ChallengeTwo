@@ -31,14 +31,14 @@ class BankAccount {
         }
     };
 
-    // withdraw(amount) {
-    //     if(this.status === false || amount > this.balance){
-    //         console.log('Invalid transaction');
-    //     }else {
-    //         this.balance -= amount;
-    //         this.getBalance();
-    //     }
-    // };
+    withdraw(amount) {
+        if(this.status !== 'open' || amount > this.balance){
+            console.log('Invalid transaction');
+        }else {
+            this.balance -= amount;
+            this.getBalance();
+        }
+    };
     
 
     // close(){
@@ -56,7 +56,7 @@ newOwner.open();
 
 newOwner.getBalance();
 newOwner.deposit(2000);
-// newOwner.withdraw(200);
+newOwner.withdraw(200);
 
 
 module.exports = BankAccount;
