@@ -51,5 +51,10 @@ describe(`Bank Account`, () => {
         expect(newAccount.withdraw(25)).toBe('Invalid transaction, please check balance and if account is open')
     });
 
+    it(`Should return 'You cannot perform any transactions. Account is closed.' if account is closed`, () => {
+        const newAccount = new BankAccount('asdasfs',3450,'closed');
+        expect(newAccount.close()).toBe('You cannot perform any transactions. Account is closed.')
+    });
+
 
 })

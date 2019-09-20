@@ -46,19 +46,12 @@ class BankAccount {
 
     close(){
         this.status = 'closed';
-        console.log('You cannot perform any transactions. Account is closed.');    
+        return 'You cannot perform any transactions. Account is closed.';    
     };
 }
 
 module.exports =BankAccount;
 
-let newOwner = new BankAccount('asdasfs',3450)
-newOwner.open();
 
-newOwner.getBalance();
-newOwner.deposit(2000);
-newOwner.withdraw(200);
-newOwner.close();
-newOwner.deposit(2000);
 
 
