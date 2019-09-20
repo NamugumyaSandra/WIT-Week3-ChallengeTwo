@@ -36,5 +36,20 @@ describe(`Bank Account`, () => {
         expect(newAccount.deposit(200)).toBe('Invalid transaction, account is closed')
     });
 
+    it(`Should return new balance after withdraw if account is open and amount is less than balance`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'open');
+        expect(newAccount.withdraw(5)).toBe('Balance: 10 USD')
+    });
+
+    it(`Should return 'Invalid transaction, please check balance and if account is open' if account is closed`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'closed');
+        expect(newAccount.withdraw(5)).toBe('Invalid transaction, please check balance and if account is open')
+    });
+
+    it(`Should return 'Invalid transaction, please check balance and if account is open' if account is open but low balance`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'closed');
+        expect(newAccount.withdraw(25)).toBe('Invalid transaction, please check balance and if account is open')
+    });
+
 
 })

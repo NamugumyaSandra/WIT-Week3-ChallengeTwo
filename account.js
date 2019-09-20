@@ -36,10 +36,10 @@ class BankAccount {
 
     withdraw(amount) {
         if(this.status !== 'open' || amount > this.balance){
-            console.log('Invalid transaction, account is closed');
+            return 'Invalid transaction, please check balance and if account is open';
         }else {
             this.balance -= amount;
-            this.getBalance();
+            return this.getBalance();
         }
     };
     
