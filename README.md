@@ -14,7 +14,7 @@ All operations must be carried out when the account is open. When the account is
 
 ### To contribute
 
-To improve the Application, for the repository and the follow the **to run** steps.
+To improve the Application, `fork` the repository and the follow the **to run** steps.
 * Create a new branch in which to work `git branch {ft-name}`.
 * When changes are ready to be merged, create a ***Pull Request***.
 
