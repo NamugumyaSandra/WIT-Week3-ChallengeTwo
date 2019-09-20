@@ -3,7 +3,7 @@
     "jest": "^24.9.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "name": "bankaccount",
   "version": "1.0.0",
