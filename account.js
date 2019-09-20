@@ -1,4 +1,3 @@
-
 class BankAccount {
     constructor(owner,balance,status) {
         this.owner = owner;
@@ -11,15 +10,19 @@ class BankAccount {
     open(){
         this.status = 'open';
         if (this.balance >= this.minBalance){
-            console.log(`Initial Deposit: ${this.balance} USD`);
+            return `Initial Deposit: ${this.balance} USD`;
         } else{
-            console.log(`Initial deposit should be atleast ${this.minBalance} USD.`)
+            return `Initial deposit should be atleast ${this.minBalance} USD.`;
         }      
     }
 
 //transactions
     getBalance() {
-        console.log(`Balance: ${this.balance} USD`)
+        if(this.status === 'open'){
+            console.log(`Balance: ${this.balance} USD`)
+        }else{
+            console.log('Invalid transaction, account is closed')
+        }
     };
 
     deposit(amount) {
@@ -27,13 +30,13 @@ class BankAccount {
             this.balance += amount;
             this.getBalance();
         } else {
-            console.log('Invalid transaction');
+            console.log('Invalid transaction, account is closed');
         }
     };
 
     withdraw(amount) {
         if(this.status !== 'open' || amount > this.balance){
-            console.log('Invalid transaction');
+            console.log('Invalid transaction, account is closed');
         }else {
             this.balance -= amount;
             this.getBalance();
@@ -43,18 +46,19 @@ class BankAccount {
 
     close(){
         this.status = 'closed';
-        console.log('You cannot perform any transactions.Account is closed.');    
+        console.log('You cannot perform any transactions. Account is closed.');    
     };
 }
 
-// let newOwner = new BankAccount('asdasfs',3450)
-// newOwner.open();
+module.exports =BankAccount;
 
-// newOwner.getBalance();
-// newOwner.deposit(2000);
-// newOwner.withdraw(200);
-// newOwner.close();
-// newOwner.deposit(2000);
+let newOwner = new BankAccount('asdasfs',3450)
+newOwner.open();
+
+newOwner.getBalance();
+newOwner.deposit(2000);
+newOwner.withdraw(200);
+newOwner.close();
+newOwner.deposit(2000);
 
 
-module.exports = BankAccount;
