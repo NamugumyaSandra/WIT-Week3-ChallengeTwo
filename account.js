@@ -19,9 +19,9 @@ class BankAccount {
 //transactions
     getBalance() {
         if(this.status === 'open'){
-            console.log(`Balance: ${this.balance} USD`)
+            return `Balance: ${this.balance} USD`;
         }else{
-            console.log('Invalid transaction, account is closed')
+            return 'Invalid transaction, account is closed';
         }
     };
 

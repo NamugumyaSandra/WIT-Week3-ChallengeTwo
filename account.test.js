@@ -16,4 +16,14 @@ describe(`Bank Account`, () => {
         expect(newAccount.open()).toBe('Initial deposit should be atleast 10 USD.')
     });
 
+    it(`Should return current balance if account is open`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'open');
+        expect(newAccount.getBalance()).toBe('Balance: 15 USD')
+    });
+
+    it(`Should return 'Invalid transaction, account is closed' if account is closed`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'closed');
+        expect(newAccount.getBalance()).toBe('Invalid transaction, account is closed')
+    });
+
 })
