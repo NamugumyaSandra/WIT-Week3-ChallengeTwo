@@ -28,9 +28,9 @@ class BankAccount {
     deposit(amount) {
         if(this.status === 'open') {
             this.balance += amount;
-            this.getBalance();
+            return this.getBalance();
         } else {
-            console.log('Invalid transaction, account is closed');
+            return 'Invalid transaction, account is closed';
         }
     };
 

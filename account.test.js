@@ -26,4 +26,15 @@ describe(`Bank Account`, () => {
         expect(newAccount.getBalance()).toBe('Invalid transaction, account is closed')
     });
 
+    it(`Should return new balance after deposit if account is open`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'open');
+        expect(newAccount.deposit(200)).toBe('Balance: 215 USD')
+    });
+
+    it(`Should return 'Invalid transaction, account is closed' if account is closed`, () => {
+        const newAccount = new BankAccount('asdasfs',15,'closed');
+        expect(newAccount.deposit(200)).toBe('Invalid transaction, account is closed')
+    });
+
+
 })
